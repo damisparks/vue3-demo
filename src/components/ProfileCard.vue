@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { IProfileDTS } from '@/types'
-defineProps<{ person: IProfileDTS }>()
+defineProps<{ user: IProfileDTS }>()
 </script>
 
 <template>
   <div class="rounded-lg shadow-lg flex">
-    <RouterLink :to="{ name: 'user-id', params: { id: person.id } }">
+    <RouterLink :to="{ name: 'user-id', params: { id: user.id } }">
       <img
         class="w-52 h-full flex-none rounded-l-lg object-cover"
         loading="lazy"
-        :src="person.image"
-        :alt="person.name ? person.name : 'user'"
+        :src="user.image"
+        :alt="user.name ? user.name : 'user'"
       />
     </RouterLink>
     <div class="flex flex-col p-3">
       <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">
-        {{ person.name }}
+        {{ user.name }}
       </h3>
       <p class="font-medium text-gray-600">Alive - Human</p>
 
