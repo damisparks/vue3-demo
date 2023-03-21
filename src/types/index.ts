@@ -25,6 +25,7 @@ export interface IProfileDTS {
 }
 
 export interface IProfileViewDTS extends IProfileDTS {
+  type: string
   gender: string
   episode: Array<string>
   created: Date

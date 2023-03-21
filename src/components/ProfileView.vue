@@ -52,6 +52,12 @@ defineProps<{ user: IProfileViewDTS }>()
           {{ user.location.name }}
         </a>
       </p>
+      <p class="text-base leading-7 text-gray-600">
+        Type:
+        <span class="font-medium text-gray-600">
+          {{ user.type || 'Not provided' }}
+        </span>
+      </p>
       <ul role="list" class="divide-y divide-gray-200 w-full">
         <li v-for="ep in user.episode" :key="ep" class="flex py-4">
           <div class="w-full">
