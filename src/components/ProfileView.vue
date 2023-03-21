@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { IProfileViewDTS } from '@/types'
+import ProfileStatus from './ui/ProfileStatus.vue'
 defineProps<{ user: IProfileViewDTS }>()
 </script>
 
 <template>
-  <div class="shadow-lg bg-white p-2">
+  <div class="shadow-lg bg-white p-2 rounded-lg">
     <div class="flex flex-col items-center my-4">
-      <div class="relative">
+      <div class="relative mb-3">
         <img
           :src="user.image"
           :alt="user.name || 'user'"
@@ -25,8 +26,11 @@ defineProps<{ user: IProfileViewDTS }>()
           {{ user.name }}
         </span>
       </h3>
-      <p class="font-medium text-gray-600">
-        {{ user.status }} - {{ user.species }}
+      <p class="flex items-center">
+        <ProfileStatus :user-status="user.status || 'Unknown'" />
+        <span class="font-medium text-gray-600 ml-2">
+          {{ user.status }} - {{ user.species }}
+        </span>
       </p>
       <p class="mt-4 text-base leading-7 text-gray-600">
         Origin:

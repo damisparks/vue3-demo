@@ -7,10 +7,18 @@ export interface IPlace {
   url: string
 }
 
+enum IProfileStatusEnum {
+  Alive = 'Alive',
+  Dead = 'Dead',
+  Unknown = 'Unknown',
+}
+
+export type IProfileStatusType = keyof typeof IProfileStatusEnum
+
 export interface IProfileDTS {
   id: null | number
   name: string
-  status: string
+  status: IProfileStatusType
   species: string
   image: string
   origin: IPlace
