@@ -11,7 +11,7 @@ const { isLoading, data, isError, error } = getAllProfilesQuery()
     <div v-else-if="data" class="grid lg:grid-cols-2 gap-6">
       <!-- {{ data.results }} -->
       <div v-for="item in data.results" :key="item.id">
-        <ProfileCard :person="item" />
+        <ProfileCard :user="item" />
       </div>
 
       <div class="flex items-center justify-between mb-4">

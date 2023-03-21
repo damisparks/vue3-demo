@@ -12,6 +12,8 @@ declare module '@vue/runtime-core' {
     AppNav: typeof import('./components/ui/AppNav.vue')['default']
     CharactorCreator: typeof import('./components/CharactorCreator.vue')['default']
     ProfileCard: typeof import('./components/ProfileCard.vue')['default']
+    ProfileStatus: typeof import('./components/ui/ProfileStatus.vue')['default']
+    ProfileView: typeof import('./components/ProfileView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -7,8 +7,14 @@ module.exports = {
       //  extend theme here 🎨
     },
   },
+
+  // https://github.com/tailwindlabs/tailwindcss-aspect-ratio
+  corePlugins: {
+    aspectRatio: false,
+  },
   plugins: [
     // Tailwind forms plugin
     require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }
