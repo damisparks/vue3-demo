@@ -9,9 +9,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AppHint: typeof import('./components/AppHint.vue')['default']
     AppNav: typeof import('./components/ui/AppNav.vue')['default']
-    CharactorCreator: typeof import('./components/CharactorCreator.vue')['default']
+    AppTextInput: typeof import('./components/ui/AppTextInput.vue')['default']
     ProfileCard: typeof import('./components/ProfileCard.vue')['default']
+    ProfileCreator: typeof import('./components/ProfileCreator.vue')['default']
     ProfileStatus: typeof import('./components/ui/ProfileStatus.vue')['default']
     ProfileView: typeof import('./components/ProfileView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

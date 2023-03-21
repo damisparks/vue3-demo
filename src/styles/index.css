@@ -28,6 +28,6 @@ TAILWIND BASE STYLES
     @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500;
   }
   .btn-primary {
-    @apply px-2 rounded-md border text-gray-700 font-normal hover:text-gradient;
+    @apply px-3 py-1 rounded-md border text-gray-700 font-medium hover:text-gradient;
   }
 }

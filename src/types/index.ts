@@ -13,7 +13,16 @@ enum IProfileStatusEnum {
   Unknown = 'Unknown',
 }
 
+export enum INoticeStyleEnum {
+  success = 'success',
+  error = 'error',
+  info = 'info',
+  warning = 'warning',
+  none = 'none',
+}
+
 export type IProfileStatusType = keyof typeof IProfileStatusEnum
+export type INoticeType = keyof typeof INoticeStyleEnum
 
 export interface IProfileDTS {
   id: null | number

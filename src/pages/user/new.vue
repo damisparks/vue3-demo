@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import CharactorCreator from '@/components/CharactorCreator.vue'
+import ProfileCreator from '@/components/ProfileCreator.vue'
 </script>
 
 <template>
   <div>
     <h1>Create new hero</h1>
-    <CharactorCreator />
+    <ProfileCreator />
   </div>
 </template>
 
