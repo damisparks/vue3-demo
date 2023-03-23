@@ -13,10 +13,11 @@ export default defineConfig({
     Components({
       dts: 'src/components.d.ts',
     }),
+
     Pages(),
     Layouts(),
     AutoImport({
-      imports: ['vue', 'vue-router'],
+      imports: ['vue', 'vue-router', 'vee-validate', '@vueuse/core'],
       dts: 'src/auto-imports.d.ts',
       dirs: ['src/use', 'src/use/**', 'src/components/**', 'src/store'],
       vueTemplate: true,

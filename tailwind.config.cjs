@@ -4,7 +4,11 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      //  extend theme here 🎨
+      colors: {
+        error: '#f31700',
+        info: '#0058e9',
+        success: '#28C76F',
+      },
     },
   },
 

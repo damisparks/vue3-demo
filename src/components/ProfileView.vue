@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { IProfileViewDTS } from '@/types'
+import AppGenderChip from './ui/AppGenderChip.vue'
 import ProfileStatus from './ui/ProfileStatus.vue'
 defineProps<{ user: IProfileViewDTS }>()
 </script>
@@ -13,11 +14,9 @@ defineProps<{ user: IProfileViewDTS }>()
           :alt="user.name || 'user'"
           class="aspect-[4/5] w-64 sm:w-72 rounded-lg object-cover"
         />
-        <span
-          class="absolute top-2 right-2 text-sm bg-blue-800 rounded-md shadow-lg px-2 py-0.5 text-white font-semibold"
-        >
+        <AppGenderChip>
           {{ user.gender.toUpperCase() }}
-        </span>
+        </AppGenderChip>
       </div>
       <h3>
         <span

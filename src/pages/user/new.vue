@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import CharactorCreator from '@/components/CharactorCreator.vue'
+import ProfileCreator from '@/components/ProfileCreator.vue'
+import AppTitle from '@/components/ui/AppTitle.vue'
 </script>
 
 <template>
-  <div>
-    <h1>Create new hero</h1>
-    <CharactorCreator />
+  <div class="max-w-lg mx-auto">
+    <AppTitle>Create new hero</AppTitle>
+    <ProfileCreator />
   </div>
 </template>
 
