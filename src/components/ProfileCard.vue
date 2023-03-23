@@ -2,10 +2,12 @@
 import { IProfileDTS } from '@/types'
 import AppGenderChip from './ui/AppGenderChip.vue'
 defineProps<{ user: IProfileDTS }>()
+
+const userStore = useUserStore()
 </script>
 
 <template>
-  <div class="rounded-lg shadow-lg flex relative bg-white">
+  <div class="rounded-lg shadow-lg flex relative bg-white h-52">
     <RouterLink :to="{ name: 'user-id', params: { id: user.id } }">
       <img
         class="w-52 h-full flex-none rounded-l-lg object-cover"
@@ -33,6 +35,13 @@ defineProps<{ user: IProfileDTS }>()
           {{ user.type || 'Not provided' }}
         </span>
       </p>
+      <div class="absolute bottom-1 right-2">
+        <button class="btn-primary" @click="userStore.likedOrUnlike(user)">
+          <span class="text-sm">
+            {{ user.favourite ? 'Unlike' : 'Mark as Favourite' }}
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </template>

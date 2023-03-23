@@ -12,9 +12,20 @@ export const useUserStore = defineStore('UserStore', {
     addNewProfile(user: IProfileDTS) {
       this.newProfiles.unshift(user)
     },
+    likedOrUnlike(user: IProfileDTS) {
+      if (!user) return
+      const index = this.users.findIndex((el) => el.id === user.id)
+      if (index === -1) return
+      this.users.splice(index, 1, {
+        ...user,
+        favourite: (user.favourite = !user.favourite),
+      })
+    },
   },
   getters: {
     allUsers: (state) => state.newProfiles.concat(state.users),
+    allFavourites: (state) => state.users.filter((el) => el.favourite),
+    noFavourites: (state) => !state.users.filter((el) => el.favourite).length,
   },
 })
 
