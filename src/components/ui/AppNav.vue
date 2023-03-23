@@ -4,6 +4,7 @@ import { INavItem } from '@/types'
 const navlinks: INavItem[] = [
   { name: 'Home', to: 'index' },
   { name: 'Create new', to: 'user-new' },
+  { name: 'Favourites', to: 'user-favourites' },
 ]
 
 const route = useRoute()

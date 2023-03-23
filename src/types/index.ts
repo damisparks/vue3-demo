@@ -32,6 +32,7 @@ export interface IProfileDTS {
   species: string
   type: string
   gender: string
+  favourite: boolean
 }
 
 export interface IProfileViewDTS extends IProfileDTS {
