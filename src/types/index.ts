@@ -25,17 +25,17 @@ export type IProfileStatusType = keyof typeof IProfileStatusEnum
 export type INoticeType = keyof typeof INoticeStyleEnum
 
 export interface IProfileDTS {
-  id: null | number
+  id: number
+  image: string
   name: string
   status: IProfileStatusType
   species: string
-  image: string
-  origin: IPlace
+  type: string
+  gender: string
 }
 
 export interface IProfileViewDTS extends IProfileDTS {
-  type: string
-  gender: string
+  origin: IPlace
   episode: Array<string>
   created: Date
   url: string

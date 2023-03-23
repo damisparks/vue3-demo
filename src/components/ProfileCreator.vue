@@ -1,18 +1,23 @@
 <script setup lang="ts">
+import { useId } from '@/use/useId'
+import { IProfileDTS } from '@/types'
 import { object, string } from 'yup'
 import AppImageDropZone from './ui/AppImageDropZone.vue'
 import AppRadioGroup from './ui/AppRadioGroup.vue'
 import AppTextInput from './ui/AppTextInput.vue'
+
+const genderOptions = [
+  { label: 'male', value: 'Male' },
+  { label: 'female', value: 'Female' },
+]
 
 const AppHint = defineAsyncComponent(
   () => import(/* webpackChunkName: 'AppHint' */ '@/components/AppHint.vue')
 )
 
 const hideImgInput = ref(false)
-const genderOptions = [
-  { label: 'male', value: 'Male' },
-  { label: 'female', value: 'Female' },
-]
+const otherError = ref<any>(null)
+
 // form validation schema
 const validationSchema = object({
   name: string().required(),
@@ -20,7 +25,10 @@ const validationSchema = object({
   gender: string().required().label('Gender'),
 })
 
-const { handleSubmit } = useForm({ validationSchema })
+const { id } = useId()
+const { handleSubmit, isSubmitting, resetForm } = useForm({ validationSchema })
+const userStore = useUserStore()
+const router = useRouter()
 
 const { value: name, errorMessage: nameError } = useField('name', undefined, {
   initialValue: '',
@@ -38,11 +46,21 @@ const { value: gender, errorMessage: genderError } = useField(
 )
 
 const onCreate = handleSubmit((values) => {
-  console.log(values)
-  const userDetail = {
-    name: values.name,
-    image: values.image,
-    gender: values.gender,
+  try {
+    const userDetail: IProfileDTS = {
+      id: id,
+      name: values.name,
+      image: values.image,
+      gender: values.gender,
+      species: '',
+      type: '',
+      status: 'Alive',
+    }
+    userStore.addNewProfile(userDetail)
+    resetForm()
+    router.push({ name: 'index' })
+  } catch (error) {
+    otherError.value = error
   }
 })
 </script>
@@ -91,6 +109,16 @@ const onCreate = handleSubmit((values) => {
         {{ imageError }}
       </AppHint>
     </fieldset>
-    <button class="btn-primary w-full" type="submit">Create</button>
+    <AppHint v-if="otherError" :hint="otherError" variant="error">
+      {{ otherError }}
+    </AppHint>
+    <button
+      :disabled="isSubmitting"
+      :class="{ 'cursor-not-allowed opacity-70': isSubmitting }"
+      class="btn-primary w-full"
+      type="submit"
+    >
+      Create
+    </button>
   </form>
 </template>

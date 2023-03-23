@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AppGenderChip: typeof import('./components/ui/AppGenderChip.vue')['default']
     AppHint: typeof import('./components/AppHint.vue')['default']
     AppImage: typeof import('./components/ui/AppImage.vue')['default']
     AppImageDropZone: typeof import('./components/ui/AppImageDropZone.vue')['default']

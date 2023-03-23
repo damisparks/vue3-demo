@@ -9,9 +9,8 @@ const fetcher = async (id: number) =>
     (response) => response.json()
   )
 
-const { isLoading, isError, data, error } = useQuery(
-  ['profile', id.value],
-  () => fetcher(parseInt(id.value))
+const { isLoading, isError, data, error } = useQuery(['user', id.value], () =>
+  fetcher(parseInt(id.value))
 )
 </script>
 <template>
