@@ -3,19 +3,40 @@ import ProfileCard from '@/components/ProfileCard.vue'
 import { useQuery } from 'vue-query'
 import { useUserStore } from '@/store/UserStore'
 import services from '@/services'
+
+const route = useRoute()
+const router = useRouter()
 const userStore = useUserStore()
 const userCacheKey = ref<string>('users')
 
-const { isLoading, isError, data, error } = useQuery(
-  userCacheKey.value,
-  async () => await services.getAllCharacters(),
-  {
+const currentPage = ref<any>(route.query.page || 1)
+const getUserFn = async () => await services.getAllCharacters(currentPage.value)
+
+const userQueryFn = () =>
+  useQuery([userCacheKey.value, currentPage], getUserFn, {
     select: (res) => res.data,
     onSuccess: (data) => {
       userStore.$patch({ users: data.results })
+      userStore.$patch({ metadata: data.info })
     },
-  }
-)
+  })
+
+const { isLoading, isError, data, error } = userQueryFn()
+
+const changePageQuery = () =>
+  router.push({ name: 'index', query: { page: currentPage.value } })
+
+const goToNextPage = () => {
+  currentPage.value++
+  getUserFn()
+  changePageQuery()
+}
+
+const goToPrevious = () => {
+  currentPage.value--
+  getUserFn()
+  changePageQuery()
+}
 </script>
 
 <template>
@@ -27,11 +48,23 @@ const { isLoading, isError, data, error } = useQuery(
       <div v-for="item in userStore.allUsers" :key="item.id">
         <ProfileCard :user="item" />
       </div>
-      <!-- TODO - add pagination -->
-      <!-- <div class="flex items-center justify-between mb-4">
-        <button class="btn-primary">Previous</button>
-        <button class="btn-primary">Next</button>
-      </div> -->
+      <div class="flex items-center justify-between mb-4">
+        <button
+          v-if="userStore.metadata.prev"
+          class="btn-primary"
+          @click="goToPrevious"
+        >
+          Previous
+        </button>
+        <button
+          v-if="userStore.metadata.next"
+          class="btn-primary"
+          role="button"
+          @click="goToNextPage"
+        >
+          Next
+        </button>
+      </div>
     </div>
     <p v-else>Nothing to show</p>
   </div>

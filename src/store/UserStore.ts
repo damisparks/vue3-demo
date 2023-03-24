@@ -1,11 +1,12 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
-import { IProfileDTS } from '@/types'
+import { IMetadata, IProfileDTS } from '@/types'
 
 export const useUserStore = defineStore('UserStore', {
   state: () => {
     return {
       users: [] as IProfileDTS[],
       newProfiles: [] as IProfileDTS[],
+      metadata: {} as IMetadata,
     }
   },
   actions: {

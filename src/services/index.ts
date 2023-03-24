@@ -9,8 +9,8 @@ const apiClient: AxiosInstance = axios.create(axiosConfig)
 
 export default {
   // get all characters
-  getAllCharacters() {
-    return apiClient.get('/character')
+  getAllCharacters(page: any) {
+    return apiClient.get(`/character/?page=${page}`)
   },
 
   // get single character
