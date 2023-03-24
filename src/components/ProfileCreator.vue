@@ -52,9 +52,10 @@ const onCreate = handleSubmit((values) => {
       name: values.name,
       image: values.image,
       gender: values.gender,
-      species: '',
+      species: 'Human',
       type: '',
       status: 'Alive',
+      favourite: false,
     }
     userStore.addNewProfile(userDetail)
     resetForm()
@@ -66,11 +67,15 @@ const onCreate = handleSubmit((values) => {
 </script>
 <template>
   <form
-    class="rounded-md shadow-lg px-4 py-6 bg-white space-y-4"
+    class="rounded-md shadow-lg px-4 py-6 colormode-bg space-y-4 dark:border-zinc-100/20 dark:border"
     @submit="onCreate"
   >
     <fieldset>
-      <label for="name" class="text-sm font-medium text-gray-900">Name</label>
+      <label
+        for="name"
+        class="text-sm font-medium text-zinc-900 dark:text-zinc-300/90"
+        >Name</label
+      >
       <AppTextInput
         type="text"
         name="name"
@@ -83,7 +88,10 @@ const onCreate = handleSubmit((values) => {
       </AppHint>
     </fieldset>
     <fieldset>
-      <label for="gender" class="text-sm font-medium text-gray-900">
+      <label
+        for="gender"
+        class="text-sm font-medium text-zinc-900 dark:text-zinc-300"
+      >
         Gender
       </label>
       <AppRadioGroup :options="genderOptions" v-model="gender" />

@@ -27,12 +27,11 @@ const { isLoading, isError, data, error } = useQuery(
       <div v-for="item in userStore.allUsers" :key="item.id">
         <ProfileCard :user="item" />
       </div>
-
-      <div class="flex items-center justify-between mb-4">
-        <!-- TODO - add pagination -->
+      <!-- TODO - add pagination -->
+      <!-- <div class="flex items-center justify-between mb-4">
         <button class="btn-primary">Previous</button>
         <button class="btn-primary">Next</button>
-      </div>
+      </div> -->
     </div>
     <p v-else>Nothing to show</p>
   </div>

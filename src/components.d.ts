@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     AppRadioGroup: typeof import('./components/ui/AppRadioGroup.vue')['default']
     AppTextInput: typeof import('./components/ui/AppTextInput.vue')['default']
     AppTitle: typeof import('./components/ui/AppTitle.vue')['default']
+    ColorModeSwitch: typeof import('./components/ColorModeSwitch.vue')['default']
     'Icon:fluent:camera16Filled': typeof import('~icons/fluent/camera16-filled')['default']
     'Icon:fluent:camera16Regular': typeof import('~icons/fluent/camera16-regular')['default']
     'Icon:fluent:delete16Filled': typeof import('~icons/fluent/delete16-filled')['default']
