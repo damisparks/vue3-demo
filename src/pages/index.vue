@@ -43,12 +43,14 @@ const goToPrevious = () => {
   <div>
     <div v-if="isLoading">Loading...</div>
     <div v-else-if="isError">An error has occurred: {{ error }}</div>
-    <div v-else-if="data" class="grid lg:grid-cols-2 gap-6">
+    <div v-else-if="data">
       <!-- {{ data.results }} -->
-      <div v-for="item in userStore.allUsers" :key="item.id">
-        <ProfileCard :user="item" />
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div v-for="item in userStore.allUsers" :key="item.id">
+          <ProfileCard :user="item" />
+        </div>
       </div>
-      <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center justify-between my-4">
         <button
           v-if="userStore.metadata.prev"
           class="btn-primary"

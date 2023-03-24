@@ -24,7 +24,7 @@ export const useUserStore = defineStore('UserStore', {
     },
   },
   getters: {
-    allUsers: (state) => state.newProfiles.concat(state.users).slice(0, 5),
+    allUsers: (state) => state.newProfiles.concat(state.users).slice(0, 12),
     allFavourites: (state) => state.users.filter((el) => el.favourite),
     noFavourites: (state) => !state.users.filter((el) => el.favourite).length,
   },
