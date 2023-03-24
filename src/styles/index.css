@@ -19,15 +19,22 @@ TAILWIND BASE STYLES
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-    @apply bg-gray-50;
+    @apply bg-gray-50 dark:bg-night;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-600;
   }
   .btn-primary {
-    @apply px-3 py-1 rounded-md border text-gray-700 font-medium hover:text-gradient;
+    @apply px-3 py-1 rounded-md border font-medium text-gradient;
+  }
+
+  .colormode-text {
+    @apply text-zinc-800 dark:text-white;
+  }
+  .colormode-bg {
+    @apply bg-white dark:bg-night;
   }
 }

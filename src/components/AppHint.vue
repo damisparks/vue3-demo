@@ -5,7 +5,7 @@ const props = defineProps<{ hint: string; variant?: INoticeType }>()
 
 const hintColor = computed(() => {
   if (props.variant === 'none') {
-    return 'text-gray-600'
+    return 'text-zinc-600'
   }
   if (props.variant === 'info') {
     return 'text-info'
