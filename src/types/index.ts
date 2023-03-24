@@ -42,3 +42,10 @@ export interface IProfileViewDTS extends IProfileDTS {
   url: string
   location: IPlace
 }
+
+export interface IMetadata {
+  count: number
+  pages: number
+  next: string | null
+  prev: string | null
+}
