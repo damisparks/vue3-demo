@@ -17,8 +17,8 @@ dependencies:
     specifier: 2.0.33
     version: 2.0.33(typescript@4.9.5)(vue@3.2.47)
   vee-validate:
-    specifier: 4.8.3
-    version: 4.8.3(vue@3.2.47)
+    specifier: 4.8.4
+    version: 4.8.4(vue@3.2.47)
   vue:
     specifier: ^3.2.47
     version: 3.2.47
@@ -2597,8 +2597,8 @@ packages:
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  /vee-validate@4.8.3(vue@3.2.47):
-    resolution: {integrity: sha512-/RcxZH7mnyG1DLXMxc+70llcDFagwkfebs2Yhd5Xmoe95cosNDus5L2g5iDsShZBVUTRBE0ceLHW/FcURvaeDA==}
+  /vee-validate@4.8.4(vue@3.2.47):
+    resolution: {integrity: sha512-wlLBy50t4EMEin5oqxS2mxpqW02TkIsk0H3LcivLztNJKKLW17hpPSQtQnn8wjDLoWWZ/CVOfep6aw77aCAavg==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
