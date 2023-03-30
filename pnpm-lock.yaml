@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@heroicons/vue':
-    specifier: 2.0.16
-    version: 2.0.16(vue@3.2.47)
+    specifier: 2.0.17
+    version: 2.0.17(vue@3.2.47)
   '@tailwindcss/forms':
     specifier: 0.5.3
     version: 0.5.3(tailwindcss@3.2.7)
@@ -357,8 +357,8 @@ packages:
       - supports-color
     dev: true
 
-  /@heroicons/vue@2.0.16(vue@3.2.47):
-    resolution: {integrity: sha512-saVAExLlGu6epqmS543qeWd/UOJUxpTJyK9aXeFGqS3VIW8X7yyJQmUGT40A38gBEAxMOdTdH9jFSh8sjPFM7A==}
+  /@heroicons/vue@2.0.17(vue@3.2.47):
+    resolution: {integrity: sha512-M5P6Y9tmctbtv/IC1dO5vTw9xqppYxm/5BKuL4hGlxxLvaxbnTmMAoxTIzezSdYAaLh63emgOCBMa+mxphRxUQ==}
     peerDependencies:
       vue: '>= 3'
     dependencies:
