@@ -25,6 +25,9 @@ declare module '@vue/runtime-core' {
     'Icon:fluent:camera16Regular': typeof import('~icons/fluent/camera16-regular')['default']
     'Icon:fluent:delete16Filled': typeof import('~icons/fluent/delete16-filled')['default']
     'Icon:fluent:delete16Regular': typeof import('~icons/fluent/delete16-regular')['default']
+    'Icon:fluent:navigation16Filled': typeof import('~icons/fluent/navigation16-filled')['default']
+    'Icon:fluent:person16Filled': typeof import('~icons/fluent/person16-filled')['default']
+    'Icon:fluent:search16Filled': typeof import('~icons/fluent/search16-filled')['default']
     'Icon:fluentic:baselineCameraAlt': typeof import('~icons/fluent/ic-baseline-camera-alt')['default']
     'Icon:ic:baselineCameraAlt': typeof import('~icons/ic/baseline-camera-alt')['default']
     'Icon:ic:baselineDelete': typeof import('~icons/ic/baseline-delete')['default']
@@ -37,5 +40,6 @@ declare module '@vue/runtime-core' {
     SidebarItem: typeof import('./components/ui/easypractice/SidebarItem.vue')['default']
     SidebarListItem: typeof import('./components/ui/easypractice/SidebarListItem.vue')['default']
     SideItem: typeof import('./components/ui/easypractice/SideItem.vue')['default']
+    TopNav: typeof import('./components/ui/easypractice/TopNav.vue')['default']
   }
 }

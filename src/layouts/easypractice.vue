@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppSidebar from '@/components/ui/easypractice/AppSidebar.vue'
 import SidebarListItem from '@/components/ui/easypractice/SidebarListItem.vue'
+import TopNav from '@/components/ui/easypractice/TopNav.vue'
 
 const showSidebar = ref(true)
 
@@ -11,6 +12,7 @@ const toggleSidebar = () => {
 
 <template>
   <div class="flex flex-col">
+    <TopNav @toggle-sidebar="toggleSidebar" />
     <div>
       <!-- sidebar -->
       <AppSidebar :collapsed="showSidebar" @toggle-sidebar="toggleSidebar">

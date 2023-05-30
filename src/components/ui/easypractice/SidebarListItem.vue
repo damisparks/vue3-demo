@@ -13,7 +13,7 @@ const navItem: INavItem[] = [
 ]
 </script>
 <template>
-  <div class="px-2 space-y-3 border">
+  <div class="px-2 space-y-2">
     <div v-for="item in navItem" :key="item.path">
       <SidebarItem :nav="item" />
     </div>
