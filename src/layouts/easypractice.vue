@@ -12,7 +12,7 @@ const toggleSidebar = () => {
 
 <template>
   <div class="flex flex-col">
-    <TopNav @toggle-sidebar="toggleSidebar" />
+    <TopNav @update-sidebar="toggleSidebar" />
     <div>
       <!-- sidebar -->
       <AppSidebar :collapsed="showSidebar" @toggle-sidebar="toggleSidebar">
