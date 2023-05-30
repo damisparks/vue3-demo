@@ -5,6 +5,7 @@ const navlinks: INavItem[] = [
   { name: 'Home', to: 'index' },
   { name: 'Create new', to: 'user-new' },
   { name: 'Favourites', to: 'user-favourites' },
+  { name: 'EasyPractice', to: 'easypractice' },
 ]
 
 const route = useRoute()

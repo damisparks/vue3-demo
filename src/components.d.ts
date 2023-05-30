@@ -16,8 +16,10 @@ declare module '@vue/runtime-core' {
     AppNav: typeof import('./components/ui/AppNav.vue')['default']
     AppRadio: typeof import('./components/ui/AppRadio.vue')['default']
     AppRadioGroup: typeof import('./components/ui/AppRadioGroup.vue')['default']
+    AppSidebar: typeof import('./components/ui/easypractice/AppSidebar.vue')['default']
     AppTextInput: typeof import('./components/ui/AppTextInput.vue')['default']
     AppTitle: typeof import('./components/ui/AppTitle.vue')['default']
+    AppTopNav: typeof import('./components/ui/easypractice/AppTopNav.vue')['default']
     ColorModeSwitch: typeof import('./components/ColorModeSwitch.vue')['default']
     'Icon:fluent:camera16Filled': typeof import('~icons/fluent/camera16-filled')['default']
     'Icon:fluent:camera16Regular': typeof import('~icons/fluent/camera16-regular')['default']
@@ -32,5 +34,6 @@ declare module '@vue/runtime-core' {
     ProfileView: typeof import('./components/ProfileView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SidebarListItem: typeof import('./components/ui/easypractice/SidebarListItem.vue')['default']
   }
 }
