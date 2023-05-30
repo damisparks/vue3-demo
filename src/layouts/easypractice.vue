@@ -3,7 +3,7 @@ import AppSidebar from '@/components/ui/easypractice/AppSidebar.vue'
 import SidebarListItem from '@/components/ui/easypractice/SidebarListItem.vue'
 import TopNav from '@/components/ui/easypractice/TopNav.vue'
 
-const showSidebar = ref(true)
+const showSidebar = ref(false)
 
 const toggleSidebar = () => {
   showSidebar.value = !showSidebar.value

@@ -21,6 +21,8 @@ declare module '@vue/runtime-core' {
     AppTitle: typeof import('./components/ui/AppTitle.vue')['default']
     AppTopNav: typeof import('./components/ui/easypractice/AppTopNav.vue')['default']
     ColorModeSwitch: typeof import('./components/ColorModeSwitch.vue')['default']
+    EasyHeaderTitle: typeof import('./components/ui/easypractice/EasyHeaderTitle.vue')['default']
+    HeaderTitle: typeof import('./components/ui/easypractice/HeaderTitle.vue')['default']
     'Icon:fluent:camera16Filled': typeof import('~icons/fluent/camera16-filled')['default']
     'Icon:fluent:camera16Regular': typeof import('~icons/fluent/camera16-regular')['default']
     'Icon:fluent:delete16Filled': typeof import('~icons/fluent/delete16-filled')['default']
@@ -40,6 +42,7 @@ declare module '@vue/runtime-core' {
     SidebarItem: typeof import('./components/ui/easypractice/SidebarItem.vue')['default']
     SidebarListItem: typeof import('./components/ui/easypractice/SidebarListItem.vue')['default']
     SideItem: typeof import('./components/ui/easypractice/SideItem.vue')['default']
+    TopHeaderContext: typeof import('./components/ui/easypractice/TopHeaderContext.vue')['default']
     TopNav: typeof import('./components/ui/easypractice/TopNav.vue')['default']
   }
 }

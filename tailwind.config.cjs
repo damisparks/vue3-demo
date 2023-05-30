@@ -28,6 +28,15 @@ module.exports = {
     aspectRatio: false,
   },
   plugins: [
+    /** @type {import('tailwindcss/types/config').PluginCreator} */
+    ({ addComponents }) => {
+      addComponents({
+        '.btn-main': {
+          '@apply text-base leading-5 rounded p-2 bg-main text-white': {},
+        },
+      })
+    },
+
     // Tailwind forms plugin
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
