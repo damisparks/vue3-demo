@@ -34,6 +34,8 @@ declare module '@vue/runtime-core' {
     ProfileView: typeof import('./components/ProfileView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SidebarItem: typeof import('./components/ui/easypractice/SidebarItem.vue')['default']
     SidebarListItem: typeof import('./components/ui/easypractice/SidebarListItem.vue')['default']
+    SideItem: typeof import('./components/ui/easypractice/SideItem.vue')['default']
   }
 }

@@ -1,19 +1,21 @@
 <script setup lang="ts">
+import SidebarItem from './SidebarItem.vue'
+
 interface INavItem {
   name: string
   path: string
 }
 
 const navItem: INavItem[] = [
-  { name: 'Appointments', path: 'appointments' },
-  { name: 'Notications', path: 'notifications' },
-  { name: 'Invoices', path: 'invoices' },
+  { name: 'Appointments', path: 'easypractice-appointments' },
+  { name: 'Notications', path: 'easypractice-notifications' },
+  { name: 'Invoices', path: 'easypractice-invoices' },
 ]
 </script>
 <template>
-  <div class="px-6">
+  <div class="px-2 space-y-3 border">
     <div v-for="item in navItem" :key="item.path">
-      {{ item.name }}
+      <SidebarItem :nav="item" />
     </div>
   </div>
 </template>

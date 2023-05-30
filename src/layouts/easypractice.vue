@@ -14,7 +14,7 @@ const toggleSidebar = () => {
     <div>
       <!-- sidebar -->
       <AppSidebar :collapsed="showSidebar" @toggle-sidebar="toggleSidebar">
-        <SidebarListItem />
+        <SidebarListItem class="mx-[10px] py-[10px]" />
       </AppSidebar>
     </div>
 

@@ -39,11 +39,12 @@ defineProps<{ collapsedWidth?: string; collapsed: boolean }>()
           <p class="mr-4 leading-6">
             &copy; {{ new Date().getFullYear() }} EasyPractice
           </p>
-          <a href="#">
+          <!-- TODO : implemented later -->
+          <!-- <a href="#">
             <icon:fluent:question-circle-12-regular
               class="h-6 w-6 hover:text-primary cursor-pointer"
             />
-          </a>
+          </a> -->
         </div>
       </aside>
     </div>
