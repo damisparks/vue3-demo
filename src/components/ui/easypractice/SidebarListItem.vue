@@ -1,10 +1,6 @@
 <script setup lang="ts">
+import { INavItem } from '@/types'
 import SidebarItem from './SidebarItem.vue'
-
-interface INavItem {
-  name: string
-  path: string
-}
 
 const navItem: INavItem[] = [
   { name: 'Appointments', path: 'easypractice-appointments' },

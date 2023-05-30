@@ -29,7 +29,7 @@ export default defineConfig({
       dirs: ['src/use', 'src/use/**', 'src/components/**', 'src/store'],
       vueTemplate: true,
     }),
-    
+
     Icons({
       autoInstall: true,
       compiler: 'vue3',

@@ -1,6 +1,6 @@
 export interface INavItem {
   name: string
-  to: string
+  path: string
 }
 export interface IPlace {
   name: string

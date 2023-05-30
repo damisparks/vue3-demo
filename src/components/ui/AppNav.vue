@@ -2,10 +2,10 @@
 import { INavItem } from '@/types'
 import ColorModeSwitch from '../ColorModeSwitch.vue'
 const navlinks: INavItem[] = [
-  { name: 'Home', to: 'index' },
-  { name: 'Create new', to: 'user-new' },
-  { name: 'Favourites', to: 'user-favourites' },
-  { name: 'EasyPractice', to: 'easypractice' },
+  { name: 'Home', path: 'index' },
+  { name: 'Create new', path: 'user-new' },
+  { name: 'Favourites', path: 'user-favourites' },
+  { name: 'EasyPractice', path: 'easypractice' },
 ]
 
 const route = useRoute()
@@ -16,7 +16,7 @@ const route = useRoute()
     class="bg-white shadow z-40 sticky top-0 p-2 rounded-3xl flex items-center justify-center dark:bg-zinc-800/50 backdrop-blur-lg"
   >
     <RouterLink
-      v-for="{ name, to } in navlinks"
+      v-for="{ name, path: to } in navlinks"
       :to="{ name: to }"
       :title="name"
       :key="`navlinks-${name}`"
