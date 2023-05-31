@@ -6,8 +6,10 @@ import TopNav from '@/components/ui/easypractice/TopNav.vue'
 import { myApp } from '@/components/ui/easypractice/data/myApp'
 const showExplore = ref(false)
 const showSidebar = ref(false)
+const userToggled = ref(false)
 
 const toggleSidebar = () => {
+  userToggled.value = true // set this to true when the user manually toggles the sidebar
   showSidebar.value = !showSidebar.value
 }
 
@@ -25,13 +27,18 @@ const items = computed(() => {
     <TopNav @update-sidebar="toggleSidebar" class="sticky top-0" />
     <div>
       <!-- sidebar -->
-      <AppSidebar :collapsed="showSidebar" @toggle-sidebar="toggleSidebar">
+      <AppSidebar
+        :collapsed="showSidebar"
+        :user-toggled="userToggled"
+        @toggle-sidebar="toggleSidebar"
+        @update:collapsed="showSidebar = $event"
+      >
         <SidebarListItem class="mx-[10px] py-[10px]" />
       </AppSidebar>
     </div>
 
     <!-- content  -->
-    <main class="min-h-screen">
+    <main class="min-h-screen lg:pl-64">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <RouterView />
       </div>
