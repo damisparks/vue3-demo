@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/vue/20/solid'
 const mode = useColorMode({
   emitAuto: true,
   modes: {
@@ -19,15 +18,15 @@ const { state, next } = useCycleList(['dark', 'light', 'auto'], {
     @click="next()"
   >
     <template v-if="state === 'dark'">
-      <SunIcon name="dark-mode" class="w-4 h-4" />
+      <icon:fluent:weather-sunny-16-filled class="w-4 h-4" />
       <span class="sr-only">Dark Mode</span>
     </template>
     <template v-if="state === 'light'">
-      <MoonIcon name="light-mode" class="w-4 h-4" />
+      <icon:fluent:dark-theme-20-filled class="w-4 h-4" />
       <span class="sr-only">Light Mode</span>
     </template>
     <template v-if="state === 'auto'">
-      <ComputerDesktopIcon name="computer-desktop" class="w-4 h-4" />
+      <icon:fluent:desktop-16-filled class="w-4 h-4" />
       <span class="sr-only">Light Mode</span>
     </template>
   </button>
