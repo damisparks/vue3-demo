@@ -37,7 +37,7 @@ const items = computed(() => {
       </div>
     </main>
     <div class="relative">
-      <div class="fixed bottom-10 right-4">
+      <div class="fixed bottom-10 right-4 z-10">
         <AppQuickAcess
           :showExplore="showExplore"
           @update:app-quickaccess="canExplore"
