@@ -45,6 +45,7 @@ declare global {
   const isRef: typeof import('vue')['isRef']
   const makeDestructurable: typeof import('@vueuse/core')['makeDestructurable']
   const markRaw: typeof import('vue')['markRaw']
+  const myApp: typeof import('./components/ui/easypractice/data/myApp')['myApp']
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
@@ -105,6 +106,7 @@ declare global {
   const unrefElement: typeof import('@vueuse/core')['unrefElement']
   const until: typeof import('@vueuse/core')['until']
   const useActiveElement: typeof import('@vueuse/core')['useActiveElement']
+  const useAppointmentStore: typeof import('./store/AppointmentStore')['useAppointmentStore']
   const useArrayEvery: typeof import('@vueuse/core')['useArrayEvery']
   const useArrayFilter: typeof import('@vueuse/core')['useArrayFilter']
   const useArrayFind: typeof import('@vueuse/core')['useArrayFind']
@@ -346,6 +348,7 @@ declare module 'vue' {
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly myApp: UnwrapRef<typeof import('./components/ui/easypractice/data/myApp')['myApp']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
@@ -406,6 +409,7 @@ declare module 'vue' {
     readonly unrefElement: UnwrapRef<typeof import('@vueuse/core')['unrefElement']>
     readonly until: UnwrapRef<typeof import('@vueuse/core')['until']>
     readonly useActiveElement: UnwrapRef<typeof import('@vueuse/core')['useActiveElement']>
+    readonly useAppointmentStore: UnwrapRef<typeof import('./store/AppointmentStore')['useAppointmentStore']>
     readonly useArrayEvery: UnwrapRef<typeof import('@vueuse/core')['useArrayEvery']>
     readonly useArrayFilter: UnwrapRef<typeof import('@vueuse/core')['useArrayFilter']>
     readonly useArrayFind: UnwrapRef<typeof import('@vueuse/core')['useArrayFind']>

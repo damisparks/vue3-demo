@@ -1,6 +1,6 @@
 export interface INavItem {
   name: string
-  to: string
+  path: string
 }
 export interface IPlace {
   name: string
@@ -48,4 +48,12 @@ export interface IMetadata {
   pages: number
   next: string | null
   prev: string | null
+}
+
+// for easypractice interface
+export interface IAppointment {
+  id: string
+  subject: string
+  date: string
+  description: string
 }
