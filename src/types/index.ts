@@ -49,3 +49,11 @@ export interface IMetadata {
   next: string | null
   prev: string | null
 }
+
+// for easypractice interface
+export interface IAppointment {
+  id: string
+  subject: string
+  date: string
+  description: string
+}

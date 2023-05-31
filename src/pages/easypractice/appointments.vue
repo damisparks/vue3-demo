@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppHint from '@/components/AppHint.vue'
 import AppointmentCreator from '@/components/ui/easypractice/AppointmentCreator.vue'
 import PeekRenderer from '@/components/ui/easypractice/PeekRenderer.vue'
 import TopHeaderContext from '@/components/ui/easypractice/TopHeaderContext.vue'
@@ -7,6 +8,8 @@ const isOpen = ref(false)
 const toggle = () => {
   isOpen.value = !isOpen.value
 }
+
+const appointmentStore = useAppointmentStore()
 </script>
 <template>
   <div>
@@ -28,9 +31,20 @@ const toggle = () => {
     </TopHeaderContext>
     <PeekRenderer :open="isOpen" @update:peekrender="toggle">
       <template #content>
-        <AppointmentCreator />
+        <AppointmentCreator @success-update:appointment="isOpen = false" />
       </template>
     </PeekRenderer>
+
+    <!-- table content will be here -->
+    <div v-if="appointmentStore.appointments.length > 0">
+      <div
+        v-for="appointment in appointmentStore.appointments"
+        :key="appointment.id"
+      >
+        {{ appointment }}
+      </div>
+    </div>
+    <p class="text-zinc-500 mt-4">You have no appointments yet</p>
   </div>
 </template>
 
