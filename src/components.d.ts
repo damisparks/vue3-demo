@@ -28,7 +28,6 @@ declare module '@vue/runtime-core' {
     HeaderTitle: typeof import('./components/ui/easypractice/HeaderTitle.vue')['default']
     'Icon:fluent:chevronDoubleRight16Regular': typeof import('~icons/fluent/chevron-double-right16-regular')['default']
     'Icon:fluent:documentEdit16Regular': typeof import('~icons/fluent/document-edit16-regular')['default']
-    'Icon:fluent:edit16Regular': typeof import('~icons/fluent/edit16-regular')['default']
     'Icon:fluent:gridDots20Filled': typeof import('~icons/fluent/grid-dots20-filled')['default']
     'Icon:fluent:navigation16Filled': typeof import('~icons/fluent/navigation16-filled')['default']
     'Icon:fluent:person16Filled': typeof import('~icons/fluent/person16-filled')['default']
