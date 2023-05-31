@@ -11,8 +11,21 @@ export const useAppointmentStore = defineStore('AppointmentStore', {
     addNewAppointment(appointment: IAppointment) {
       this.appointments.unshift(appointment)
     },
+    updateAppointment(appointment: IAppointment) {
+      const index = this.appointments.findIndex(
+        (el) => el.id === appointment.id
+      )
+      if (index === -1) return
+      this.appointments.splice(index, 1, appointment)
+    },
   },
-  getters: {},
+  getters: {
+    allAppointments: (state) => state.appointments,
+    hasAppointments: (state) => !!state.appointments.length,
+    getCurrentAppointment: (state) => (id: string) => {
+      return state.appointments.filter((el) => el.id === id)
+    },
+  },
 })
 
 if (import.meta.hot) {

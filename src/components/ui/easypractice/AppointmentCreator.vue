@@ -44,7 +44,6 @@ const onSubmit = handleSubmit((values) => {
     resetForm()
     emit('success-update:appointment')
   } catch (error) {
-    console.log(error)
     alert('something went wrong')
   }
 })

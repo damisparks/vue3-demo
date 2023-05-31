@@ -34,6 +34,10 @@ module.exports = {
         '.btn-main': {
           '@apply text-base leading-5 rounded p-2 bg-main text-white': {},
         },
+        '.btn-outline-main': {
+          '@apply text-base leading-5 rounded p-2 border border-main text-main':
+            {},
+        },
       })
     },
 
