@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import AppHint from '@/components/AppHint.vue'
 import AppointmentCreator from '@/components/ui/easypractice/AppointmentCreator.vue'
 import PeekRenderer from '@/components/ui/easypractice/PeekRenderer.vue'
 import TopHeaderContext from '@/components/ui/easypractice/TopHeaderContext.vue'
+import AppBasicTable from '@/components/ui/AppBasicTable.vue'
 
+// ref or reactive
 const isOpen = ref(false)
+
 const toggle = () => {
   isOpen.value = !isOpen.value
 }
@@ -37,12 +39,15 @@ const appointmentStore = useAppointmentStore()
 
     <!-- table content will be here -->
     <div v-if="appointmentStore.appointments.length > 0">
-      <div
-        v-for="appointment in appointmentStore.appointments"
-        :key="appointment.id"
+      <AppBasicTable
+        :data="appointmentStore.appointments"
+        :fields="['id', 'subject', 'description', 'date', 'actions']"
+        :headers="['ID', 'Subject', 'Description', 'Date', 'Actions']"
       >
-        {{ appointment }}
-      </div>
+        <template #cell(date)="{ item: date }">
+          {{ new Date(date).toLocaleDateString() }}
+        </template>
+      </AppBasicTable>
     </div>
     <p class="text-zinc-500 mt-4">You have no appointments yet</p>
   </div>
