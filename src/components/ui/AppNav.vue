@@ -6,6 +6,7 @@ const navlinks: INavItem[] = [
   { name: 'Create new', path: 'user-new' },
   { name: 'Favourites', path: 'user-favourites' },
   { name: 'EasyPractice', path: 'easypractice-appointments' },
+  { name: 'Rotating Position', path: 'rotating-position' },
 ]
 
 const route = useRoute()
