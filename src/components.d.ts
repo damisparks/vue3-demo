@@ -33,6 +33,7 @@ declare module '@vue/runtime-core' {
     'Icon:fluent:gridDots20Filled': typeof import('~icons/fluent/grid-dots20-filled')['default']
     'Icon:fluent:navigation16Filled': typeof import('~icons/fluent/navigation16-filled')['default']
     'Icon:fluent:person16Filled': typeof import('~icons/fluent/person16-filled')['default']
+    'Icon:fluent:search20Filled': typeof import('~icons/fluent/search20-filled')['default']
     'Icon:fluent:weatherSunny16Filled': typeof import('~icons/fluent/weather-sunny16-filled')['default']
     PeekRenderer: typeof import('./components/ui/easypractice/PeekRenderer.vue')['default']
     ProfileCard: typeof import('./components/ProfileCard.vue')['default']
