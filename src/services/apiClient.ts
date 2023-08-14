@@ -8,11 +8,11 @@ const axiosConfig: AxiosRequestConfig = {
   },
 }
 
-const apiClient: AxiosInstance = axios.create(axiosConfig)
+const client: AxiosInstance = axios.create(axiosConfig)
 
 export default {
   // get all albums
   getAllAlbums(term: string) {
-    return apiClient.get(`/search?term=${term}&entity=album`)
+    return client.get(`/search?term=${term}&entity=album`)
   },
 }

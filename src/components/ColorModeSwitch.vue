@@ -9,6 +9,8 @@ const mode = useColorMode({
 const { state, next } = useCycleList(['dark', 'light', 'auto'], {
   initialValue: mode,
 })
+
+watchEffect(() => (mode.value = state.value as any))
 </script>
 
 <template>
