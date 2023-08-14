@@ -29,6 +29,7 @@ declare module '@vue/runtime-core' {
     'Icon:fluent:chevronDoubleRight16Regular': typeof import('~icons/fluent/chevron-double-right16-regular')['default']
     'Icon:fluent:darkTheme20Filled': typeof import('~icons/fluent/dark-theme20-filled')['default']
     'Icon:fluent:desktop16Filled': typeof import('~icons/fluent/desktop16-filled')['default']
+    'Icon:fluent:dismiss20Filled': typeof import('~icons/fluent/dismiss20-filled')['default']
     'Icon:fluent:documentEdit16Regular': typeof import('~icons/fluent/document-edit16-regular')['default']
     'Icon:fluent:gridDots20Filled': typeof import('~icons/fluent/grid-dots20-filled')['default']
     'Icon:fluent:navigation16Filled': typeof import('~icons/fluent/navigation16-filled')['default']

@@ -6,6 +6,9 @@ const albumList = ref<string[]>(['A', 'B', 'C', 'D', 'E'])
 const searchResults = ref<string[]>([])
 const rotationInterval = ref<NodeJS.Timeout | null>(null)
 const rotationCount = ref(0)
+const rotationSpeed = ref(1000)
+const waitBeforeSearch = ref(1000)
+const maxWaitBeforeSearch = ref(5000)
 
 // search function
 const search = async () => {
@@ -67,13 +70,13 @@ const rotateList = () => {
 
 // watch for changes in search term and call handleSearch after 1 second
 watchDebounced(searchTerm, () => handleSearch(), {
-  debounce: 1000,
-  maxWait: 5000,
+  debounce: waitBeforeSearch,
+  maxWait: maxWaitBeforeSearch,
 })
 
 // on mount start rotation
 onMounted(() => {
-  rotationInterval.value = setInterval(rotateList, 1000)
+  rotationInterval.value = setInterval(rotateList, rotationSpeed.value)
 })
 
 // cleanup
@@ -100,7 +103,8 @@ onUnmounted(() => {
           class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
         >
           <span>
-            <icon:fluent:search-20-filled class="h-5 w-5" />
+            <icon:fluent:search-20-filled class="h-5 w-5" v-if="!searchTerm" />
+            <icon:fluent:dismiss-20-filled class="h-5 w-5" v-else />
           </span>
         </button>
       </div>
