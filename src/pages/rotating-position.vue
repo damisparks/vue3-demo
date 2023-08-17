@@ -6,9 +6,9 @@ const albumList = ref<string[]>(['A', 'B', 'C', 'D', 'E'])
 const searchResults = ref<string[]>([])
 const rotationInterval = ref<NodeJS.Timeout | null>(null)
 const rotationCount = ref(0)
-const rotationSpeed = ref(1000)
-const waitBeforeSearch = ref(1000)
-const maxWaitBeforeSearch = ref(5000)
+const ROTATION_SPEED = 1000
+const WAIT_BEFORE_SEARCH = 1000
+const MAX_WAIT_BEFORE_SEARCH = 5000
 
 // search function
 const search = async () => {
@@ -31,20 +31,6 @@ const handleSearch = async () => {
   await search()
 }
 
-// rotating list
-// const rotatedList = computed(() => {
-//   const rotated = [...albumList.value, ...searchResults.value]
-//   for (let i = 0; i < rotationCount.value; i++) {
-//     const firstItem = rotated.shift()
-//     if (firstItem) {
-//       rotated.push(firstItem)
-//     }
-//   }
-
-//   return rotated
-// })
-
-// rotating list with max of 5 items
 const rotatedList = computed(() => {
   const rotated = [...albumList.value, ...searchResults.value]
   const rotatedCount = Math.min(5, rotated.length) // Limit to 5 items
@@ -56,27 +42,20 @@ const rotatedList = computed(() => {
   return displayed
 })
 
-// rotating list
-// const rotateList = () => {
-//   rotationCount.value = (rotationCount.value + 1) % albumList.value.length
-// }
-
-// rotating list with max of 5 items
 const rotateList = () => {
   rotationCount.value =
     (rotationCount.value + 1) %
     (albumList.value.length + searchResults.value.length)
 }
 
-// watch for changes in search term and call handleSearch after 1 second
 watchDebounced(searchTerm, () => handleSearch(), {
-  debounce: waitBeforeSearch,
-  maxWait: maxWaitBeforeSearch,
+  debounce: WAIT_BEFORE_SEARCH,
+  maxWait: MAX_WAIT_BEFORE_SEARCH,
 })
 
 // on mount start rotation
 onMounted(() => {
-  rotationInterval.value = setInterval(rotateList, rotationSpeed.value)
+  rotationInterval.value = setInterval(rotateList, ROTATION_SPEED)
 })
 
 // cleanup
