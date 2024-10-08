@@ -38,8 +38,8 @@ devDependencies:
     specifier: 1.1.22
     version: 1.1.22
   '@iconify-json/ph':
-    specifier: 1.1.5
-    version: 1.1.5
+    specifier: 1.2.1
+    version: 1.2.1
   '@rushstack/eslint-patch':
     specifier: 1.2.0
     version: 1.2.0
@@ -408,8 +408,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify-json/ph@1.1.5:
-    resolution: {integrity: sha512-iLXq3nohfGge22gL2tZmQ2WHBKkKkIbGWrkuyC8arckS4PWaONyh4A+uDPtSek9QbYDvi9AE2+NxWkNZhANotA==}
+  /@iconify-json/ph@1.2.1:
+    resolution: {integrity: sha512-x0DNfwWrS18dbsBYOq3XGiZnGz4CgRyC+YSl/TZvMQiKhIUl1woWqUbMYqqfMNUBzjyk7ulvaRovpRsIlqIf8g==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
