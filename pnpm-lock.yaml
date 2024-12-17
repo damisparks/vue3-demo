@@ -30,8 +30,8 @@ dependencies:
     specifier: 4.1.6
     version: 4.1.6(vue@3.2.47)
   yup:
-    specifier: 1.0.2
-    version: 1.0.2
+    specifier: 1.6.1
+    version: 1.6.1
 
 devDependencies:
   '@iconify-json/fluent':
@@ -3161,8 +3161,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /yup@1.0.2:
-    resolution: {integrity: sha512-Lpi8nITFKjWtCoK3yQP8MUk78LJmHWqbFd0OOMXTar+yjejlQ4OIIoZgnTW1bnEUKDw6dZBcy3/IdXnt2KDUow==}
+  /yup@1.6.1:
+    resolution: {integrity: sha512-JED8pB50qbA4FOkDol0bYF/p60qSEDQqBD0/qeIrUCG1KbPBIQ776fCUNb9ldbPcSTxA69g/47XTo4TqWiuXOA==}
     dependencies:
       property-expr: 2.0.5
       tiny-case: 1.0.3
